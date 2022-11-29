@@ -1,0 +1,65 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using project.Models;
+
+@{
+
+    Layout = "~/Views/Item/_AdminLayout.cshtml";
+
+
+}
+
+
+@model List<TblKhachHang>
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        Khách hàng
+        <a href="Add" class="btn btn-info pull-right fa fa-plus"></a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" border="1" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Mã khác hàng</th>
+                        <th>Tên khác hàng</th>
+                        <th>Giới tính</th>
+                        <th>Địa chỉ</th>
+                        <th>Ngày sinh</th>
+                        <th colspan="2">Edit</th>
+
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    @foreach (TblKhachHang p in @Model)
+                    {
+                        
+                        <tr>
+                            <td>@p.MaKh</td>
+                            <td>@p.TenKh</td>
+                            @if (@p.Gt == true)
+                            {
+                                <td>Nam</td>
+                            }
+                            else
+                            {
+                                <td>Nữ</td>
+                            }
+                            <td>@p.Diachi</td>
+                            <td>@p.NgaySinh</td>
+                            <td><a asp-controller="Home" asp-action="Update" asp-route-name=@p.MaKh>Update</a></td>
+                            <td><a asp-controller="Home" asp-action="Delete" asp-route-name=@p.MaKh onclick="return confirm('Are you sure want to delete')">Delete</a></td>
+                            
+
+                        </tr>
+                        
+                    }
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

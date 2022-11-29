@@ -1,0 +1,92 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using project.Models;
+
+@{
+   
+    Layout = "~/Views/Item/_AdminLayout.cshtml";
+}
+
+@model TblKhachHang
+
+<div class="container">
+
+
+       <form asp-controller="Home" asp-action="Add" method="post">
+    
+
+        <div class="form-horizontal">
+            <h4>Thêm khách hàng</h4>
+            <hr />
+            
+
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Mã khách hàng</label>
+               
+                <div class="col-md-10">
+                    <input type="text" class="form-control" asp-for=MaKh />
+                    
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Tên khách hàng</label>
+
+                <div class="col-md-10">
+                    <input type="text" class="form-control" asp-for=TenKh />
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Giới tính</label>
+
+                <div class="col-md-10">
+                    <input type="radio" asp-for=Gt value="true" checked="checked" /> Nam
+                    <input type="radio" asp-for=Gt value="false" /> Nữ
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Địa chỉ</label>
+
+                <div class="col-md-10">
+                    <input type="text" class="form-control" asp-for=Diachi />
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Ngày sinh</label>
+
+                <div class="col-md-10">
+                    <input type="datetime-local" class="form-control" asp-for=NgaySinh />
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+        </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

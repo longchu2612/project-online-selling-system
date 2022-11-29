@@ -1,0 +1,101 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using project.Models;
+
+@{
+
+    Layout = "~/Views/Item/_AdminLayout.cshtml";
+
+
+}
+
+@model TblKhachHang
+
+<div class="container">
+
+
+    <form asp-controller="Home" asp-action="Update" method="post">
+        <div>
+            <h4>Update Customer</h4>
+            <hr />
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-2">Mã khách hàng</label>
+
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" asp-for=MaKh readonly />
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-2">Tên khách hàng</label>
+
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" asp-for=TenKh />
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-2">Giới tính</label>
+
+                    <div class="col-md-10">
+                        @if (Model.Gt == true)
+                        {
+                            <input type="radio" asp-for=Gt value="true" checked="checked" /><lable>Nam</lable>
+                            
+                            <input type="radio"  asp-for=Gt  value = "false" /><label>Nữ</label>
+
+                        }
+                        else
+                        {
+                            <input type="radio" asp-for=Gt value="true"  />
+
+                            <lable>Nam</lable>
+
+                            <input type="radio" asp-for=Gt value="false" checked="checked"/>
+
+                            <label>Nữ</label>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-2">Địa chỉ</label>
+
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" asp-for=Diachi />
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-2">Ngày sinh</label>
+
+                    <div class="col-md-10">
+                        <input class="form-control" type="datetime-local" asp-for=NgaySinh />
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </form>
+</div>

@@ -1,0 +1,67 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using project.Models;
+
+@{
+
+    Layout = "~/Views/Item/_AdminLayout.cshtml";
+}
+
+@model TblMatHang
+
+<div class="container">
+
+
+    <form asp-controller="Product" asp-action="AddItem" method="post">
+
+
+        <div class="form-horizontal">
+            <h4>Thêm mặt hàng</h4>
+            <hr />
+
+
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Mã hàng</label>
+
+                <div class="col-md-10">
+                    <input type="text" class="form-control" asp-for=MaHang />
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Tên hàng</label>
+
+                <div class="col-md-10">
+                    <input type="text" class="form-control" asp-for=TenHang />
+
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="control-label col-md-2">Đơn vị tính</label>
+
+                <div class="col-md-10">
+                    <input type="text" class="form-control" asp-for=Dvt />
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Giá</label>
+
+                <div class="col-md-10">
+                    <input type="text" class="form-control" asp-for=Gia />
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>

@@ -1,0 +1,76 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using project.Models;
+
+@{
+
+    Layout = "~/Views/Item/_AdminLayout.cshtml";
+
+
+}
+
+@model TblMatHang
+
+<div class="container">
+
+
+    <form asp-controller="Product" asp-action="UpdateItem" method="post">
+        <div>
+            <h4>Update Customer</h4>
+            <hr />
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-2">Mã hàng</label>
+
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" asp-for=MaHang readonly />
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-2">Tên hàng</label>
+
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" asp-for=TenHang />
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-2">Đơn vị tính</label>
+
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" asp-for=Dvt />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-2">Giá</label>
+
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" asp-for=Gia />
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </form>
+</div>

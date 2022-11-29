@@ -1,0 +1,17 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using project.Models;
+
+
+@model TblKhachHang
+
+<h1>Thông tin chi tiết</h1>
+
+<h3>Mã khách hàng:@Model.MaKh</h3>
+<h3>Tên khách hàng:@Model.TenKh</h3>
+ @if(@Model.Gt == true){
+         <h3>Giới tính:Nam</h3>
+     }else{
+         <h3>Giới tính:Nữ</h3>
+     }
+<h3>Địa chỉ:@Model.Diachi</h3>
+<h3>Ngày sinh:@Model.NgaySinh</h3>

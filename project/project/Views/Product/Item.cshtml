@@ -1,0 +1,53 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@using project.Models;
+
+@{
+
+    Layout = "~/Views/Item/_AdminLayout.cshtml";
+
+
+}
+@model List<TblMatHang>
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        Mặt hàng
+        <a href="Add" class="btn btn-info pull-right fa fa-plus"></a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Mã hàng</th>
+                        <th>Tên hàng</th>
+                        <th>Đơn vị tính</th>
+                        <th>Giá</th>
+                        <th colspan="2">Edit</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (TblMatHang p in @Model)
+                    {
+
+                        <tr>
+                            <td>@p.MaHang</td>
+                            <td>@p.TenHang</td>
+                            <td>@p.Dvt</td>
+                            <td>@p.Gia</td>
+                            <td><a asp-controller="Product" asp-action="UpdateItem" asp-route-name=@p.MaHang>Update</a></td>
+                            <td><a asp-controller="Product" asp-action="DeleteItem" asp-route-name=@p.MaHang onclick="return confirm('Are you sure want to delete')">Delete</a></td>
+
+
+                        </tr>
+
+                    }
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
